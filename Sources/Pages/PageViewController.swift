@@ -58,6 +58,14 @@ struct PageViewController: UIViewControllerRepresentable {
             }
         }
 
+        // Disable tap gestures if tapGesturesEnabled is false
+        if !false {
+            pageViewController.gestureRecognizers.forEach { gesture in
+            if let tapGesture = gesture as? UITapGestureRecognizer {
+                tapGesture.isEnabled = false
+            }
+        }
+
         return pageViewController
     }
 
